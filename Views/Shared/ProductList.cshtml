@@ -1,0 +1,22 @@
+﻿@using Pizza.MvcWebUI.Models
+@model  IEnumerable<BlogModel>
+@{
+    ViewBag.Title = "BlogList";
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+
+<div class="col-md-8 ftco-animate">
+    @foreach (var item in Model)
+    {
+
+
+        <h2 class="mb-3">@item.Title</h2>
+        <p>
+            <img src="/Upload/@item.Image" alt="" class="img-fluid">
+        </p>
+        <div><a href="#"><span class="icon-calendar"></span> @item.Date</a></div>
+        <p>@item.Description!</p>
+    }
+
+
+</div> <!-- .col-md-8 -->

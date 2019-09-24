@@ -1,0 +1,35 @@
+﻿@using Pizza.MvcWebUI.Entity
+@model IEnumerable<Category>
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];//burada listden sonra gelen id selectedcategory atanır if döngüsünde active edilir.
+}
+
+<div class="sidebar-box ftco-animate">
+    <div class="categories">
+
+        @foreach (var item in Model)
+        {
+            if (selectedCategory != null)
+            {
+                if (item.Id == int.Parse(selectedCategory.ToString()))
+                {
+                    <li><a href="/Home/BlogList/@item.Id">@item.Name</a></li>
+
+                }
+                else
+                {
+                    <li><a href="/Home/BlogList/@item.Id">@item.Name</a></li>
+
+
+                }
+            }
+            else
+            {
+                <li><a href="/Home/BlogList/@item.Id">@item.Name</a></li>
+
+
+            }
+
+        }
+    </div>
+</div>

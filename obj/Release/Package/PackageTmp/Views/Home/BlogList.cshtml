@@ -1,0 +1,61 @@
+﻿@using Pizza.MvcWebUI.Models
+@model IEnumerable<BlogModel>
+@{
+    ViewBag.Title = "BlogDetail";
+
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];//burada listden sonra gelen id selectedcategory atanır if döngüsünde active edilir.
+
+}
+
+<section class="home-slider owl-carousel img" style="background-image: url(/Upload/bg_1.jpg);">
+
+    <div class="slider-item" style="background-image: url(/Upload/bg_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <h1 class="mb-3 mt-5 bread">Bloglar</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            @if (ViewData["sorgu"] !=null)
+            {
+
+      
+                <div class="alert alert-danger" role="alert">
+                    @ViewData["sorgu"].ToString()
+                </div>
+            }
+           
+            @Html.Partial("ProductList", Model)
+            <div class="col-md-4 sidebar ftco-animate">
+
+                @Html.Partial("Search")
+
+                @Html.Action("GetCategories", "Home")
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Recent Blog</h3>
+                    @Html.Action("FooterBlog", "Home")
+                </div>
+
+
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Hakkımızda</h3>
+                    <p> @Html.Action("FooterAbout", "Home").</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> <!-- .section -->

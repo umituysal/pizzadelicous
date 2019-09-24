@@ -1,0 +1,39 @@
+﻿@model Abc.MvcWebUI.Models.Login
+
+@{
+    ViewBag.Title = "title";
+
+}
+<style>
+    .login{
+        margin-left:24em;
+    }
+</style>
+<div class="col-md-6 login  ftco-animate">
+    <h1 class="text-center mt-5">Üye Girişi</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Lütfen kullanıcı adınızı giriniz!" })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+    </div>
+        <div class="form-group">
+          
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Lütfen şifrenizi giriniz!" } )
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group text-center mb-5">
+            <input type="submit" value="Giriş Yap" class="btn btn-primary py-3 px-5">
+        </div>
+    }
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,29 @@
+﻿
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-primary" role="alert">
+               Aradığınız sorguda blog yoktur!Başka bloğumuza bakabilirsiniz!
+            </div>
+            <div class="col-md-4 sidebar ftco-animate">
+
+                @Html.Partial("Search")
+
+                @Html.Action("GetCategories", "Home")
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Recent Blog</h3>
+                    @Html.Action("FooterBlog", "Home")
+                </div>
+
+
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Hakkımızda</h3>
+                    <p> @Html.Action("FooterAbout", "Home").</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> <!-- .section -->

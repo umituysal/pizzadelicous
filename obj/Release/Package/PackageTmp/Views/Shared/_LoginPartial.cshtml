@@ -1,0 +1,20 @@
+﻿
+
+
+
+
+@if (Request.IsAuthenticated)
+{
+    //kullanıcı adını logout linklerini çıkar.
+
+    <li class="nav-item active"><a href="/Account" class="nav-link">@User.Identity.Name</a></li>
+    <li class="nav-item active"><a href="/Account/Logout" class="nav-link">Çıkış Yap</a></li>
+
+}
+else
+{
+    //login ve register linkleri çıkar
+    <li class="nav-item"><a href="/Account/Login" class="nav-link">Giriş Yap</a></li>
+    <li class="nav-item"><a href="/Account/Register" class="nav-link">Üye Ol</a></li>
+
+}

@@ -1,0 +1,65 @@
+﻿@using Pizza.MvcWebUI.Entity
+@model Blog
+@{
+    ViewBag.Title = "BlogDetail";
+}
+
+<section class="home-slider owl-carousel img" style="background-image: url(/Upload/bg_1.jpg);">
+
+    <div class="slider-item" style="background-image: url(/Upload/bg_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <h1 class="mb-3 mt-5 bread">Bloglar</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ftco-animate">
+
+                @if (ViewData["sorgu"] != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewData["sorgu"].ToString()
+                    </div>
+
+                }
+
+                <h2 class="mb-3">@Model.Title</h2>
+                <p>
+                    <img src="/Upload/@Model.Image" alt="" class="img-fluid">
+                </p>
+                <div><a href="#"><span class="icon-calendar"></span> @Model.Date</a></div>
+                <p>@Model.Description!</p>
+
+            </div> <!-- .col-md-8 -->
+            <div class="col-md-4 sidebar ftco-animate">
+             
+                   @Html.Partial("Search")
+              
+                @Html.Action("GetCategories", "Home")
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Yeni Bloglar</h3>
+                    @Html.Action("FooterBlog", "Home")
+                </div>
+
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Hakkımızda</h3>
+                    <p> @Html.Action("FooterAbout","Home").</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> <!-- .section -->

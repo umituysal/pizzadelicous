@@ -1,0 +1,13 @@
+﻿
+@using Pizza.MvcWebUI.Entity
+@model IEnumerable<Galery>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3 ftco-animate">
+        <a  class="gallery img d-flex align-items-center" style="background-image: url(/Upload/@item.Image);">
+          
+        </a>
+    </div>
+}

@@ -1,0 +1,77 @@
+﻿
+@using Pizza.MvcWebUI.Entity
+@model About
+@{
+    ViewBag.Title = "About";
+}
+
+<section class="home-slider owl-carousel img" style="background-image: url(/Upload/bg_1.jpg);">
+
+    <div class="slider-item" style="background-image: url(/Upload/bg_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+
+                    <h1 class="mb-3 mt-5 bread">Hakkımızda</h1>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-intro">
+    <div class="container-wrap">
+        <div class="wrap d-md-flex">
+            <div class="info">
+
+                <div class="row no-gutters">
+
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="icon"><span class="icon-phone"></span></div>
+                        <div class="text">
+                            <h3>@Model.Phone</h3>
+                         
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="icon"><span class="icon-my_location"></span></div>
+                        <div class="text">
+                            <h3>@Model.Address</h3>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="icon"><span class="icon-clock-o"></span></div>
+                        <div class="text">
+                            <h3>Dükkanımız @Model.Situation açık!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-md-flex pl-md-5 p-4 align-items-center">
+                <ul class="social-icon">
+                    <li class="ftco-animate"><a href="@Model.Twitter"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="@Model.Facebook"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="@Model.Instagram"><span class="icon-instagram"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-about d-md-flex">
+    <div class="one-half img" style="background-image: url(/Upload/about.jpg);"></div>
+    <div class="one-half ftco-animate">
+        <div class="heading-section ftco-animate ">
+            <h2 class="mb-4">Welcome to <span class="flaticon-pizza">@Model.Name</span> A Restaurant</h2>
+        </div>
+        <div>
+            <p> @Model.Description.</p>
+        </div>
+    </div>
+</section>
+

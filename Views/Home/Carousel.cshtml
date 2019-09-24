@@ -1,0 +1,24 @@
+﻿
+@using Pizza.MvcWebUI.Entity
+@model IEnumerable<Carousel>
+
+@foreach (var carousel in Model)
+{
+    <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-6 col-sm-12 text-center ftco-animate">
+                    <span class="subheading">@carousel.SubTitle</span>
+                    <h1 class="mb-4">@carousel.Title</h1>
+                    <p class="mb-4 mb-md-5">@carousel.Description</p>
+                </div>
+                <div class="col-md-6 ftco-animate">
+                    <img src="~/Upload/@carousel.Image" class="img-fluid" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
